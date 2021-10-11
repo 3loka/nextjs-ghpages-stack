@@ -21,7 +21,7 @@ inputs:                                                # stack inputs
     is-secret: true
 
 configs:                                               # stack config applied to new repository
-  - repo-metadata:
+   repo-metadata:
      parameters:
        description: 'NextJS + GitHub pages'
        secrets: 
@@ -31,14 +31,14 @@ configs:                                               # stack config applied to
        - nextjs
        - github-pages
 
-  - branches:                                            # branching configs for new repository
+   branches:                                            # branching configs for new repository
     - name: main
       parameters:
         dismiss-stale-reviews: true                      # default: false
         required-approving-review-count: 1
         require-code-owner-reviews: true
 
-  - environments:                                        # environment configs for new repository
+   environments:                                        # environment configs for new repository
     - name: production
       parameters:
         protected-branches: true
@@ -47,4 +47,4 @@ github-apps:                                           # github apps configured 
 - slug: Azure
 
 init:
-- uses: ".github/workflows/stack-init.yaml"
+ uses: ".github/workflows/stack-init.yaml"
